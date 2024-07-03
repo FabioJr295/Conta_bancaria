@@ -17,10 +17,10 @@ export function main() {
     c2.visualizar();
 
     //Saque nas contas
-    console.log(`Sacar 100 reais da conta C1: ${c1.sacar(100)}`); //true
+    console.log(`\nSacar 100 reais da conta C1: ${c1.sacar(100)}`); //true
     c1.visualizar();
 
-    console.log(`Sacar 700000 reais da conta C2: ${c2.sacar(700000)}`); //false
+    console.log(`\nSacar 700000 reais da conta C2: ${c2.sacar(700000)}\n`); //false
     c2.visualizar();
 
      //Deposito nas contas
