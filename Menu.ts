@@ -11,11 +11,26 @@ export function main() {
     const c1: conta = new conta(1, 1234, 1, 'Carlos Almeida', 800000.00);
     const c2: conta = new conta(2, 1234, 2, 'Julia Rodrigues', 600000.00);
     // este mostra apenas UMA unica operação \/ \/ \/
-    // console.log(`O saldo da conta 01 é: ${c1.saldo}`);
+    console.log(`O saldo da conta 01 é: ${c1.saldo}`);
 
     c1.visualizar();
     c2.visualizar();
 
+    //Saque nas contas
+    console.log(`Sacar 100 reais da conta C1: ${c1.sacar(100)}`); //true
+    c1.visualizar();
+
+    console.log(`Sacar 700000 reais da conta C2: ${c2.sacar(700000)}`); //false
+    c2.visualizar();
+
+     //Deposito nas contas
+    console.log(`Depositar 1000000 reais da conta C1: ${c1.depositar(1000000)}`);
+    c1.depositar(1000000);
+    c1.visualizar();
+    
+    console.log(`Depositar 900000 reais da conta C2: ${c2.depositar(700000)}`);
+    c2.depositar(900000);
+    c2.visualizar();
 
     while (true) {
 

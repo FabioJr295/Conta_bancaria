@@ -58,14 +58,46 @@ export class conta{
 	public set saldo(value: number) {
 		this._saldo = value;
 	}
+
+	// Método para sacar dinheiro da conta
+
+	public sacar(valor: number): boolean{
+
+		if(this._saldo < valor){
+			console.log("O saldo é insuficiente!")
+			return false;
+		}
+
+		this._saldo = this._saldo - valor;
+		return true;
+
+	}
+
+	// Método depositar
+	public depositar(valor: number): void{
+		
+		this._saldo = this._saldo + valor;
+	}
+
     // Metodo para visualizar todos os dados do objeto
     public visualizar(): void{
+		let tipo: string = "";
+
+        switch(this._tipo){
+            case 1:
+                tipo = "Conta Corrente";
+            break;
+            case 2:
+                tipo = "Conta Poupança";
+            break
+        }
+
         console.log('***********************');
         console.log('Dados da conta');
         console.log('***********************');
         console.log(`Numero da conta: ${this._numero}`);
         console.log(`Numero da agencia: ${this._agencia}`);
-        console.log(`Tipo da conta: ${this._tipo}`);
+        console.log(`Tipo da conta: ${tipo}`);
         console.log(`Titular da conta: ${this._titular}`);
         console.log(`Saldo da conta: ${this._saldo}`);
     }
