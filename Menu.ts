@@ -1,6 +1,7 @@
 import readlinesync = require("readline-sync");
 import { colors } from "./src/util/colors";
 import { conta } from "./src/model/Conta";
+import { ContaCorrente } from "./src/model/ContaCorrente";
 
 export function main() {
 
@@ -32,13 +33,29 @@ export function main() {
     c2.depositar(900000);
     c2.visualizar();
 
+     // Novas instancias da calsse contacorrente
+
+     const cc1: ContaCorrente = new ContaCorrente(100000, 3, 1234, 1, "Fabio Seripieri", 1000000);
+     const cc2: ContaCorrente = new ContaCorrente(100, 4, 1234, 1, "Gabriel Faria", 1000);
+
+    cc1.visualizar();
+    cc2.visualizar();
+
+    console.log(`\nSaque de R$25.000,00 na conta CC1: ${cc1.sacar(25000)}`);
+    console.log(`\nSaque de R$1.500,00 na conta CC2: ${cc2.sacar(15000)}`);
+
+    console.log(`\nDepositar R$3.000,99 da conta CC2: `);
+    cc2.depositar(3000.99);
+    cc2.visualizar();
+
+
     while (true) {
 
-        console.log(colors.bg.black, colors.fg.magenta,"╔═══════════════════════════════════════════════════╗");
-        console.log("║                                                   ║");
-        console.log("║                      NULL BANK                    ║");
-        console.log("║                                                   ║");
-        console.log("╚═══════════════════════════════════════════════════╝");
+        console.log(colors.bg.black, colors.fg.magenta,"╔══════════════════════════════════════════════════╗");
+        console.log("  ║                                                  ║");
+        console.log("  ║                    NULL BANK                     ║");
+        console.log("  ║                                                  ║");
+        console.log("  ╚══════════════════════════════════════════════════╝");
         console.log("╔═══════════════════════════════════════════════════╗");
         console.log("║            1 - Criar Conta                        ║ ");
         console.log("║            2 - Listar todas as Contas             ║ ");
