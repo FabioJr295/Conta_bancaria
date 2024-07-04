@@ -2,6 +2,7 @@ import readlinesync = require("readline-sync");
 import { colors } from "./src/util/colors";
 import { conta } from "./src/model/Conta";
 import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from './src/model/ContaPoupanca';
 
 export function main() {
 
@@ -33,7 +34,7 @@ export function main() {
     c2.depositar(900000);
     c2.visualizar();
 
-     // Novas instancias da calsse contacorrente
+     // Novas instancias da calsse ContaCorrente
 
      const cc1: ContaCorrente = new ContaCorrente(100000, 3, 1234, 1, "Fabio Seripieri", 1000000);
      const cc2: ContaCorrente = new ContaCorrente(100, 4, 1234, 1, "Gabriel Faria", 1000);
@@ -48,6 +49,9 @@ export function main() {
     cc2.depositar(3000.99);
     cc2.visualizar();
 
+        // Novas instancias da calsse ContaPoupanca
+        const contapoupanca: ContaPoupanca = new ContaPoupanca(5, 1234, 2, "Rafael Siqueira", 5000, 10);
+        contapoupanca.visualizar();
 
     while (true) {
 
